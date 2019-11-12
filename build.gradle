@@ -2,6 +2,8 @@ plugins {
 	id 'org.springframework.boot' version '2.2.1.RELEASE'
 	id 'io.spring.dependency-management' version '1.0.8.RELEASE'
 	id 'java'
+	id 'eclipse'
+	id 'idea'
 }
 
 group = 'com.payments.api.feedback'
@@ -13,21 +15,22 @@ repositories {
 }
 
 dependencies {
+	implementation 'org.springframework.data:spring-data-mongodb:1.7.2.RELEASE'
+	implementation 'org.springframework.boot:spring-boot-starter-data-mongodb-reactive'
+	implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
-	implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'io.projectreactor:reactor-test'
+
 
 
 
 }
 
-jar {
-	baseName = 'spring-data-mongodb-example'
-	version =  '1.0'
-}
+
 
 test {
 	useJUnitPlatform()
