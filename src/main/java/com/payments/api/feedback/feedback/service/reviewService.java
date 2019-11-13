@@ -2,7 +2,7 @@ package com.payments.api.feedback.feedback.service;
 
 import com.payments.api.feedback.feedback.model.Review;
 
-public interface reviewService{
+public interface ReviewService {
 
-    public String insertReview(Review review);
+    public String getDetails(Review review);
 }

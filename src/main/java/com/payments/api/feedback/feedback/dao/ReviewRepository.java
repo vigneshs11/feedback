@@ -7,7 +7,7 @@ import com.payments.api.feedback.feedback.model.Review;
 
 public interface ReviewRepository extends MongoRepository<Review, Long>{
 
-      Review findByProductId(String productId);
+      Review getDetails(String productId);
 
 
 }
